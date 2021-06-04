@@ -7,23 +7,19 @@ provider "grafana" {
 module "team-management" {
   source = "../"
 
-  # create_user = false
-  # create_org  = false
-  create_team = false
-
   users = [
     {
-      email    = "tf-admin@example.com",
-      name     = "TF Admin",
-      login    = "tf-admin",
-      password = "my-password",
+      email    = "admin-name@example.com",
+      name     = "Admin Name",
+      login    = "admin-name",
+      password = "password",
       is_admin = true
     },
     {
-      email    = "staff.name@example.com",
+      email    = "staff-name@example.com",
       name     = "Staff Name",
       password = "my-password",
-      login    = "staff",
+      login    = "staff-name",
       is_admin = false
     },
     {
@@ -56,30 +52,24 @@ module "team-management" {
     },
   ]
 
-  orgs = [
-    {
-      name       = "My Organization"
-      admin_user = "tf-admin"
-      admins = [
-        "tf-admin@example.com"
-      ]
-      editors = [
-        "editor-01@example.com",
-        "editor-02@example.com"
-      ]
-      viewers = [
-        "viewer-01@example.com",
-        "viewer-02@example.com"
-      ]
-    }
-  ]
-
   teams = [
     {
-      name  = "Administrators",
-      email = "administrators@example.com",
+      name  = "My Admin Team",
+      email = "my-admin-team@example.com",
       members = [
-        "tf-admin@example.com"
+        "admin-name@example.com"
+      ],
+      preferences = {
+        theme    = "light",
+        timezone = "browser"
+      }
+    },
+    {
+      name  = "My Editors Team",
+      email = "my-editors-team@example.com"
+      members = [
+        "editor-01@example.com",
+        "editor-02@example.com"
       ],
       preferences = {
         theme    = "dark",
@@ -87,11 +77,12 @@ module "team-management" {
       }
     },
     {
-      name  = "Viewers",
-      email = "a@example.com"
+      name  = "My Viewers Team",
+      email = "my-viewers-team@example.com"
       members = [
-        "staff.name@example.com",
-        "viewer-01@example.com"
+        "staff-name@example.com",
+        "viewer-01@example.com",
+        "viewer-02@example.com"
       ],
       preferences = {
         theme    = "dark",

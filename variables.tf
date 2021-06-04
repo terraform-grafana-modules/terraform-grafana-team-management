@@ -15,23 +15,6 @@ variable "users" {
   }))
 }
 
-variable "create_org" {
-  description = "Whether to create organizations"
-  type        = bool
-  default     = true
-}
-
-variable "orgs" {
-  description = "List of organizations to create"
-  type = list(object({
-    name       = string
-    admin_user = string
-    admins     = list(string)
-    editors    = list(string)
-    viewers    = list(string)
-  }))
-}
-
 variable "create_team" {
   description = "Whether to create teams"
   type        = bool
