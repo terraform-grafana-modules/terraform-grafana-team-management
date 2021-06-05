@@ -25,9 +25,7 @@ Terraform modules for teams and user management
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| create_user | Whether to create users | `boolean` | `true` | no |
-| users | List of users to create | `list(map(any))` | n/a | yes |
-| create_team | Whether to create teams | `boolean` | `true` | no |
-| teams | List of teams to create | `list(map(any))` | n/a | yes |
+| users | Map of users to create | `map(map(any))` | n/a | yes |
+| teams | Map of teams to create | `map(map(any))` | n/a | yes |
 
 ## Outputs
