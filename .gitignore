@@ -5,7 +5,7 @@
 *.tfstate
 *.tfstate.*
 *.terraform.lock.hcl
-*tf-log.log
+*.log
 *tfplan
 */.env
 
